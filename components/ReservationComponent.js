@@ -27,12 +27,12 @@ class Reservation extends Component {
         Alert.alert(
             'Begin Search?',
             `Number of Campers: ${this.state.campers}
-                        \nHike-In? ${this.state.hikeIn}
-                        \nDate: ${this.state.date}`
-,
+            \n Hike-In? ${this.state.hikeIn}
+            \n Date: ${this.state.date.toLocaleDateString('en-US')}`,
+
             [
-              {text: 'OK', onPress: () => console.log('OK button clicked')},
-              {text: 'CANCEL', onPress: () => console.log('Cancel button clicked'), style: 'cancel'},
+              {text: 'OK', onPress: () => {console.log('OK button clicked'); this.resetForm();}},
+              {text: 'CANCEL', onPress: () => {console.log('Cancel button clicked'); this.resetForm();}, style: 'cancel'},
             ],
             { 
               cancelable: true 
